@@ -18,9 +18,9 @@ class Diagonals
             return null; // returns null if true
         }
 
-        if (n == 0 || m == 0) // checks if input parameters are of length 0
+        if (n == 0) // checks if input parameters are of length 0
         {
-            return null; // returns null if true
+            return new double[0]; // returns empty array if true
         }
 
         double[] result = new double[n];
@@ -30,6 +30,35 @@ class Diagonals
         }
         return result;
     }
+    
+
+    // Diagonals part(c) - Product of 2 Diagonal Matrices
+    public static double[] product(double a[], double b[])
+    {
+        if (a == null || b == null)
+        {
+            return null;
+        }
+
+        int n = a.length;
+        int m = b.length;
+
+        if (n != m)
+        {
+            return null;
+        }
+
+        if (n == 0)
+        {
+            return new double[0];
+        }
+
+        double[] result = new double[n]
+        for (int i = 0; i < n; i++)
+        {
+            result[i] = a[i] * b[i] // multiplies the diagonal entries of both matrices 
+        }
+        return result;
     }
 
     // Diagonals part(d) - Inverse of a Diagonal Matrix
