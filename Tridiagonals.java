@@ -2,7 +2,8 @@ import java.lang.Math;
 
 class Tridiagonals
 {
-    static double [][] exampleMatrix(int n)
+    // Tridiagonals part (a)
+    static double [][] exampleMatrix(int n) 
     { 
         double m[][] = new double [3][n];
         for (int j = 0 ; j < n ; j++)
@@ -19,9 +20,7 @@ class Tridiagonals
                 m[2][j] = j+2;
             }
         }
-
         return m;
-
     }
 
 }
