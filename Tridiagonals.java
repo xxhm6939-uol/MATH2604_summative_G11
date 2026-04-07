@@ -26,6 +26,39 @@ class Tridiagonals
         return m;
     }
 
+    // Part(c) - Sum of Two Tridiagonal Matrices
+    public static double[][] sum(double[][] A, double[][] B)
+    {
+        if (A == null || B == null) // Check for null inputs
+        {
+            return null;
+        }
+
+        if (!isValidTridiagonal(A) || !isValidTridiagonal(B)) // Check if both are valid tridiagonal matrices
+        {
+            return null;
+        }
+
+        int n = A[0].length;
+
+        if (B[0].length != n) // Check size compatibility
+        {
+            return null;
+        }
+
+        double[][] result = new double[3][n]; // Create result matrix
+
+        for (int i = 0; i < 3; i++) // Add corresponding elements
+        {
+            for (int j = 0; j < n; j++)
+            {
+                result[i][j] = A[i][j] + B[i][j];
+            }
+        }
+
+        return result;
+    }
+    
     // Part(d) - Product of a Diagonal Matrix with Tridiagonal Matrix
      static double m[][] productWithDiagonal(double d[], double t[][])
     {
