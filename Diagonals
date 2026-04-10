@@ -2,6 +2,18 @@ import static java.lang.Math.*;
 
 class Diagonals
 {
+/**
+* Part(a)-exampleMatrix
+* Implement a function exampleMatrix, with no parameters
+* The diagonal entries are 10, 8, 5, -10, and 7
+*/
+    public static double[] exampleMatrix(){
+        double[] diagonal =new double[]{10,8,5,-10,7};
+        return diagonal;
+    }
+
+
+
     // Part(b) - Sum of 2 Diagonal Matrices
     public static double[] sum(double a[], double b[]) 
     {
