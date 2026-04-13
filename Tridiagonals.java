@@ -170,7 +170,8 @@ class Tridiagonals
         x[n-1] = d[n-1]/b[n-1];
         for (int i=n-2; i>=0; i=i-1){
             x[i] = (d[i] - a[i]*x[i+1])/b[i];
-        }
+        
         return x;
+    }
 }
 
