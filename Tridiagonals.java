@@ -160,18 +160,19 @@ class Tridiagonals
         // elimination, letting  lower diagonal be 0
         for (int i=1; i<n; i=i+1){
             //elementary row operation
-            double m = c[i-1]/b[i-1];
+            double m = c[i]/b[i-1];
             b[i] = b[i] - m*a[i-1];
             d[i] = d[i] - m*d[i-1];
-            c[i-1] = 0; // lower diagonal becomes 0
+            c[i] = 0; // lower diagonal becomes 0
     }
         //back subsitution, solving for x
         double[]x= new double[n];
         x[n-1] = d[n-1]/b[n-1];
         for (int i=n-2; i>=0; i=i-1){
             x[i] = (d[i] - a[i]*x[i+1])/b[i];
-        
+        }
         return x;
-    }
+        
+    
 }
 
