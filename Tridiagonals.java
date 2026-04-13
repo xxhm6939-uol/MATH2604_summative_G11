@@ -25,6 +25,35 @@ class Tridiagonals
 
         return m;
     }
+/**
+*Part (b)-Checks if the input is a valid tridiagonal matrix
+*@ parameter a is input matrix
+*@return true if valid, false otherwise
+*/
+    public static boolean isValidTridiagonal(double[][] a) {
+    // check if array is null
+    if (a==null){
+        return false;
+    }
+    // check if it has exactly 3 rows
+    if (a.length !=3){
+        return false;
+    }
+    // check if any rows is null
+    if (a[0] == null || a[1] == null || a[2] == null) {
+        return false;
+    }
+    //get length of first row
+    int n = a[0].length;
+    if (n<1){
+        return false;
+    }
+    //check if any rows have difference length
+    if (a[0].length != a[1].length||a[1].length != a[2].length){
+        return false;
+    }
+    return true;
+    }
 
     // Part(c) - Sum of Two Tridiagonal Matrices
     public static double[][] sum(double[][] A, double[][] B)
