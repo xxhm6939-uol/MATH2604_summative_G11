@@ -130,3 +130,47 @@ class Tridiagonals
     }
 }
 
+/**
+ * Part (e) - Implement a function linearSolve, solve Tx = v
+ * @ tridiagonal n × n matrix T and a vector v
+ * @return x such that Tx = v
+ */
+    public static double[] linearSolve(double[][] T, double[]v){
+        if (isValidTridiagonal(T)==false||v==null){
+            return null;
+        }
+        int n = T[0].length;
+        if (v.length != n){
+            return null;
+        }
+        double[] a = new double[n];
+        double[] b = new double[n];
+        double[] c = new double[n];
+        double[] d = new double[n];
+        for (int i=0; i<n; i=i+1){
+            // upper diagonal
+            a[i]=T[0][i];
+            // main diagonal
+            b[i]=T[1][i];
+            //lower diagonal
+            c[i]=T[2][i];
+            // vector v
+            d[i]=v[i];
+        }
+        // elimination, letting  lower diagonal be 0
+        for (int i=1; i<n; i=i+1){
+            //elementary row operation
+            double m = c[i-1]/b[i-1];
+            b[i] = b[i] - m*a[i-1];
+            d[i] = d[i] - m*d[i-1];
+            c[i-1] = 0; // lower diagonal becomes 0
+    }
+        //back subsitution, solving for x
+        double[]x= new double[n];
+        x[n-1] = d[n-1]/b[n-1];
+        for (int i=n-2; i>=0; i=i-1){
+            x[i] = (d[i] - a[i]*x[i+1])/b[i];
+        }
+        return x;
+}
+
