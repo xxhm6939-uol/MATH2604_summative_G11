@@ -172,7 +172,7 @@ class Tridiagonals
             x[i] = (d[i] - a[i]*x[i+1])/b[i];
         }
         return x;
-        
+    }    
     
 }
 
