@@ -89,7 +89,7 @@ class Tridiagonals
     }
     
     // Part(d) - Product of a Diagonal Matrix with Tridiagonal Matrix
-     static double m[][] productWithDiagonal(double d[], double t[][])
+     static double [][] productWithDiagonal(double d[], double t[][])
     {
         if (d == null || t == null) // returns null if any entries are null
         {
