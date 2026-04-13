@@ -128,7 +128,7 @@ class Tridiagonals
 
         return m;
     }
-}
+
 
 /**
  * Part (e) - Implement a function linearSolve, solve Tx = v
