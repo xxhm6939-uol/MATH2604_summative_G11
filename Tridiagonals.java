@@ -10,18 +10,18 @@ class Tridiagonals
         { 
             if (i < n - 1) 
             { 
-                m[0][i] = 1; // all entries in superdiagonal = 1
+                m[0][i] = 1; // all entries in upper diagonal = 1
             }
 
             m[1][i] = - (i + 1) * (i + 1); // entries in main diagonal
 
             if (i > 0)
             {
-                m[2][i] = i + 2; // all entried in subdiagonal
+                m[2][i] = i + 2; // all entried in lower diagonal
             }
         }
-        m[0][n - 1] = 0; // last element in superdiagonal
-        m[2][n - 1] = 0; // last element in subdiagonal
+        m[0][n - 1] = 0; // last element in upper diagonal
+        m[2][n - 1] = 0; // last element in lower diagonal
 
         return m;
     }
@@ -84,18 +84,18 @@ class Tridiagonals
         {
             if (i < n - 1)
             {
-                m[0][i] = d[i] * t[0][i]; // entries in superdiagonal
+                m[0][i] = d[i] * t[0][i]; // entries in upper diagonal
             }
 
             m[1][i] = d[i] * t[1][i]; // main diagonal
 
             if (i > 0)
             {
-                m[2][i - 1] = d[i] * t[2][i - 1]; // entried in subdiagonal
+                m[2][i] = d[i + 1] * t[2][i]; // entried in lower diagonal
             }
         } 
-        m[0][n - 1] = 0; // entries in superdiagonal
-        m[2][n - 1] = 0; // entries in subdiagonal
+        m[0][n - 1] = 0; // entries in upper diagonal
+        m[2][n - 1] = 0; // entries in lower diagonal
 
         return m;
     }
