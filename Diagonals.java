@@ -1,6 +1,6 @@
 import static java.lang.Math.*;
+public class Diagonals
 
-class Diagonals
 {
 /**
 * Part(a)-exampleMatrix
@@ -22,8 +22,8 @@ class Diagonals
             return null; // returns null if true
         }
 
-        int n = a.length // set n equal to the length of array parameters in matrix a 
-        int m = b.length // set m equal to the length of array parameters in matrix b 
+        int n = a.length; // set n equal to the length of array parameters in matrix a 
+        int m = b.length ;// set m equal to the length of array parameters in matrix b 
 
         if (n != m) // checks if lengths of arrays don't match 
         {
@@ -65,10 +65,10 @@ class Diagonals
             return new double[0];
         }
 
-        double[] result = new double[n]
+        double[] result = new double[n];
         for (int i = 0; i < n; i++)
         {
-            result[i] = a[i] * b[i] // multiplies the diagonal entries of both matrices 
+            result[i] = a[i] * b[i]; // multiplies the diagonal entries of both matrices
         }
         return result;
     }
