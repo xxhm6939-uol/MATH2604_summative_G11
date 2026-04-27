@@ -1,7 +1,20 @@
-import static java.lang.Math.*;
 
+/**
+ * This class provides a numerical solver for a second-order differential equation
+ * using finite difference approximation.
+ */
 class ODE
 {
+    /**
+     * Approximates the value of the solution f(0.5) for the differential equation:
+     * f''(x) = cos(x)f(x) + a x^2, with boundary conditions f(0) = f(1) = 0.
+     *
+     * The method constructs a tridiagonal system and solves it numerically.
+     *
+     * @param a the constant in the differential equation
+     * @param n the number of discretisation points (n > 0)
+     * @return an approximation of f(0.5), or 0.0 if n <= 0 or computation fails
+     */
     public static double solve(double a, int n)
     {
         if (n <= 0)
