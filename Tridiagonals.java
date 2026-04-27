@@ -1,8 +1,22 @@
 import java.lang.Math;
 
+/**
+ * This class provides methods for working with tridiagonal matrices.
+ *
+ * A tridiagonal matrix is stored as a 2D array of size 3 × n:
+ * row 0 = upper diagonal,
+ * row 1 = main diagonal,
+ * row 2 = lower diagonal.
+ */
 class Tridiagonals
 {
-    // Part(a) - Example of a Tridiagonal Matrix
+    /**
+     * Part(a) - exampleMatrix function
+     * Generates an example tridiagonal matrix of size n × n.
+     *
+     * @param n the size of the matrix (n > 0)
+     * @return a 3 × n array representing the tridiagonal matrix
+     */    
     static double [][] exampleMatrix(int n) 
     { 
         double m[][] = new double [3][n]; 
@@ -25,11 +39,14 @@ class Tridiagonals
 
         return m;
     }
-/**
-*Part (b)-Checks if the input is a valid tridiagonal matrix
-*@ parameter a is input matrix
-*@return true if valid, false otherwise
-*/
+
+    /**
+    * Part (b) - isValidTridiagonal function
+    * Checks if the input is a valid tridiagonal matrix
+    *
+    * @param a is input matrix
+    * @return true if valid, false otherwise
+    */
     public static boolean isValidTridiagonal(double[][] a) {
     // check if array is null
         if (a==null){
@@ -55,7 +72,15 @@ class Tridiagonals
         return true;
     }
 
-    // Part(c) - Sum of Two Tridiagonal Matrices
+    /**
+     * Part(c) - sum function
+     * Computes the sum of two tridiagonal matrices.
+     *
+     * @param A the first matrix
+     * @param B the second matrix
+     * @return a new tridiagonal matrix representing A + B,
+     *         or null if inputs are invalid or incompatible
+     */
     public static double[][] sum(double[][] A, double[][] B)
     {
         if (A == null || B == null) // Check for null inputs
@@ -88,7 +113,15 @@ class Tridiagonals
         return result;
     }
     
-    // Part(d) - Product of a Diagonal Matrix with Tridiagonal Matrix
+    /**
+     * Part(d) - productWithDiagonal
+     * Computes the product of a diagonal matrix and a tridiagonal matrix.
+     *
+     * @param d the diagonal matrix (as an array)
+     * @param t the tridiagonal matrix
+     * @return the resulting tridiagonal matrix,
+     *         or null if inputs are invalid or incompatible
+     */
      static double [][] productWithDiagonal(double d[], double t[][])
     {
         if (d == null || t == null) // returns null if any entries are null
@@ -129,11 +162,13 @@ class Tridiagonals
         return m;
     }
 
-
 /**
- * Part (e) - Implement a function linearSolve, solve Tx = v
- * @ tridiagonal n × n matrix T and a vector v
- * @return x such that Tx = v
+ * Part (e) - linearSolve function
+ * Solves the linear system Tx = v using the Thomas algorithm.
+ *
+ * @param T the tridiagonal matrix
+ * @param v the right-hand side vector
+ * @return x such that Tx = v, or null if inputs are invalid
  */
     public static double[] linearSolve(double[][] T, double[]v){
         if (isValidTridiagonal(T)==false||v==null){

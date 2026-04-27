@@ -1,20 +1,38 @@
 import static java.lang.Math.*;
+
+/**
+ * This class provides methods for working with diagonal matrices.
+ * 
+ * A diagonal matrix is represented as a one-dimensional array,
+ * where each element corresponds to a diagonal entry.
+ */
+
 public class Diagonals
 
 {
-/**
-* Part(a)-exampleMatrix
-* Implement a function exampleMatrix, with no parameters
-* The diagonal entries are 10, 8, 5, -10, and 7
-*/
+
+    /**
+     * Part(a) - exampleMatrix function
+     * Returns an example diagonal matrix with fixed entries, with no parameters
+     *
+     * The matrix has diagonal entries: 10, 8, 5, -10, 7.
+     *
+     * @return an array representing the diagonal matrix
+     */
     public static double[] exampleMatrix(){
         double[] diagonal =new double[]{10,8,5,-10,7};
         return diagonal;
     }
 
-
-
-    // Part(b) - Sum of 2 Diagonal Matrices
+    /**
+     * Part(b) - sum function
+     * Computes the sum of two diagonal matrices.
+     *
+     * @param a the first diagonal matrix
+     * @param b the second diagonal matrix
+     * @return a new array representing the sum of a and b,
+     *         or null if either input is null or their lengths differ
+     */
     public static double[] sum(double a[], double b[]) 
     {
         if (a == null || b == null) // checks if any array parameters of the function are null
@@ -43,8 +61,15 @@ public class Diagonals
         return result;
     }
     
-
-    // Part(c) - Product of 2 Diagonal Matrices
+    /**
+     * Part(c) - product function
+     * Computes the product of two diagonal matrices.
+     *
+     * @param a the first diagonal matrix
+     * @param b the second diagonal matrix
+     * @return a new array representing the product of a and b,
+     *         or null if either input is null or their lengths differ
+     */
     public static double[] product(double a[], double b[])
     {
         if (a == null || b == null)
@@ -73,7 +98,17 @@ public class Diagonals
         return result;
     }
 
-    // Part(d) - Inverse of a Diagonal Matrix
+    /**
+     * Part(d) - inverse function
+     * Computes the inverse of a diagonal matrix.
+     *
+     * Each diagonal entry is replaced by its reciprocal.
+     * Assumes that all entries are non-zero (matrix is invertible).
+     *
+     * @param a the diagonal matrix
+     * @return a new array representing the inverse of a,
+     *         or null if the input is null
+     */
     public static double[] inverse(double[] a)
     {
         if (a == null)
