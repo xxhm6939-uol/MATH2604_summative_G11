@@ -11,19 +11,12 @@ import java.lang.Math;
 class Tridiagonals
 {
     /**
-<<<<<<< HEAD
      * Part(a) - exampleMatrix function
      * Generates an example tridiagonal matrix of size n × n.
      *
      * @param n the size of the matrix (n > 0)
      * @return a 3 × n array representing the tridiagonal matrix
      */    
-=======
-     * Part(a) - Example of a Tridiagonal Matrix
-     * Runs through each position - upper diagonal, main diagonal and lower diagonal
-     */
-
->>>>>>> 4556416 (pulling changes)
     static double [][] exampleMatrix(int n) 
     { 
         double m[][] = new double [3][n]; 
@@ -121,7 +114,6 @@ class Tridiagonals
     }
     
     /**
-<<<<<<< HEAD
      * Part(d) - productWithDiagonal
      * Computes the product of a diagonal matrix and a tridiagonal matrix.
      *
@@ -130,15 +122,6 @@ class Tridiagonals
      * @return the resulting tridiagonal matrix,
      *         or null if inputs are invalid or incompatible
      */
-=======
-     * Part(d) - Product of a Diagonal Matrix with Tridiagonal Matrix
-     * Returns null if any entries are null
-     * Null if number of diagonals doesn't match 3
-     * Returns null if diagonals don't match in size
-     * Entries in upper diagonal, main diagonal and lower diagonal
-     */
-     
->>>>>>> 4556416 (pulling changes)
      static double [][] productWithDiagonal(double d[], double t[][])
     {
         if (d == null || t == null) // returns null if any entries are null

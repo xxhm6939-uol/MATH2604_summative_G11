@@ -1,4 +1,3 @@
-
 /**
  * This class provides a numerical solver for a second-order differential equation
  * using finite difference approximation.
