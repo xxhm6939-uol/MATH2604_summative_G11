@@ -1,0 +1,112 @@
+import static java.lang.Math.*;
+
+class Diagonals
+{
+    /**
+     * Part(a)-exampleMatrix
+     * Implement a function exampleMatrix, with no parameters
+     * The diagonal entries are 10, 8, 5, -10, and 7
+     */
+    
+    public static double[] exampleMatrix(){
+        double[] diagonal =new double[]{10,8,5,-10,7};
+        return diagonal;
+    }
+
+
+
+    /**
+     * Part(b) - Sum of 2 Diagonal Matrices
+     * Check if any array parameters of the function are null
+     * Set n equal to the length of array parameters in matrix A
+     * Set m equal to the length of array parameters in matrix B
+     */  
+
+    public static double[] sum(double a[], double b[]) 
+    {
+        if (a == null || b == null) 
+        {
+            return null; 
+        }
+
+        int n = a.length;
+        int m = b.length; 
+
+        if (n != m) 
+        {
+            return null; 
+        }
+
+        if (n == 0) 
+        {
+            return new double[0]; 
+        }
+
+        double[] result = new double[n];
+        for (int i = 0; i < n; i++) 
+        {
+            result[i] = a[i] + b[i]; 
+
+        return result;
+    }
+    
+
+    /**
+     * Part(c) - Product of 2 Diagonal Matrices
+     * Multiplies the diagonal entries of both matrices
+    */ 
+
+    public static double[] product(double a[], double b[])
+    {
+        if (a == null || b == null)
+        {
+            return null;
+        }
+
+        int n = a.length;
+        int m = b.length;
+
+        if (n != m)
+        {
+            return null;
+        }
+
+        if (n == 0)
+        {
+            return new double[0];
+        }
+
+        double[] result = new double[n]
+        for (int i = 0; i < n; i++)
+        {
+            result[i] = a[i] * b[i]  
+        }
+        return result;
+    }
+
+    /**
+     * Part(d) - Inverse of a Diagonal Matrix
+    */ 
+    public static double[] inverse(double[] a)
+    {
+        if (a == null)
+        {
+            return null;
+        }
+
+        int n = a.length;
+
+        if (n == 0)
+        {
+            return new double[0];
+        }
+
+        double[] result = new double[n];
+
+        for (int i = 0; i < n; i++)
+        {
+            result[i] = 1.0 /a[i];
+        }
+        return result;
+    }
+}
